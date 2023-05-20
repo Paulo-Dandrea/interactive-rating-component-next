@@ -1,9 +1,8 @@
-
 /**========================================================================
  *!                           General Styles
  *========================================================================**/
 
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 
 $clr-primary: hsl(25, 97%, 53%);
 $clr-white: hsl(0, 0%, 100%);
@@ -18,12 +17,60 @@ $fw-700: 700;
 
 $fs: 15px;
 
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.border_radius_1 {
+    border-radius: 1rem;
+}
+
+
 .page {
     min-height: 100vh;
 
     font-family: $ff-primary;
     font-size: $fs;
     font-weight: $fw-400;
-    color: $clr-primary;
+    color: $clr-white;
     background-color: $clr-very-dark-blue;
+    
+    display: grid;
+    place-items: center;
+
+
+    .card {
+        max-width: 350px;
+        width: 90%;
+
+        background-color: $clr-dark-blue;
+    }
+
+    // inline-box
+
+    .circle {
+        // display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        background-color: $clr-medium-grey;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+}
+
+.circle-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #eaeaea;
+    border: none;
+    cursor: pointer;
 }
