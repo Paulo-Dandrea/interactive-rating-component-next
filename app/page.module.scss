@@ -10,6 +10,7 @@ $clr-light-grey: hsl(217, 12%, 63%);
 $clr-medium-grey: hsl(216, 12%, 54%);
 $clr-dark-blue: hsl(213, 19%, 18%);
 $clr-very-dark-blue: hsl(216, 12%, 8%);
+$clr-black: hsl(0, 0%, 0%);
 
 $ff-primary: "Overpass", sans-serif;
 $fw-400: 400;
@@ -17,60 +18,96 @@ $fw-700: 700;
 
 $fs: 15px;
 
+.flow > :where(:not(:first-child)) {
+  margin-top: 1.5rem;
+}
 
-.flex {
-    display: flex;
-    gap: 1rem;
+.flex_space_between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .border_radius_1 {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
+.border_radius_2 {
+  border-radius: 2rem;
+}
+
+.padding_0_75 {
+  padding: 0.75rem;
+}
+
+.padding_1_5 {
+  padding: 1.5rem;
+}
 
 .page {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    font-family: $ff-primary;
-    font-size: $fs;
+  font-family: $ff-primary;
+  font-size: $fs;
+  font-weight: $fw-400;
+  color: $clr-white;
+  background-color: $clr-black;
+
+  display: grid;
+  place-items: center;
+
+  p,
+  span {
     font-weight: $fw-400;
-    color: $clr-white;
+    color: $clr-light-grey;
+  }
+
+  .card {
+    max-width: 350px;
+    width: 90%;
+
     background-color: $clr-very-dark-blue;
-    
-    display: grid;
-    place-items: center;
+    background-image: linear-gradient(
+      to bottom,
+      $clr-dark-blue,
+      $clr-very-dark-blue
+    );
+  }
 
-
-    .card {
-        max-width: 350px;
-        width: 90%;
-
-        background-color: $clr-dark-blue;
-    }
-
-    // inline-box
-
-    .circle {
-        // display: inline-block;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        
-
-        background-color: $clr-medium-grey;
-        border-radius: 50%;
-        padding: 1rem;
-    }
-}
-
-.circle-button {
+  .circle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0.5rem;
+    width: 42px;
+    height: 42px;
+
+    background-color: $clr-dark-blue;
     border-radius: 50%;
-    background-color: #eaeaea;
-    border: none;
-    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    label {
+      transform: translateY(3px);
+    }
+
+  }
+
+  button {
+    color: $clr-white;
+
+    &.submit {
+      background-color: $clr-primary;
+
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: $fw-700;
+
+      span {
+        color: $clr-white;
+      }
+    }
+  }
 }

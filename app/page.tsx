@@ -1,47 +1,49 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import svg from "../public/icon-star.svg";
+import s from "./page.module.scss";
 
 export default function Home() {
-    return (
-        // className={`${styles.description} ${styles.yellow} next 13`}
-        <div className={styles.page}>
-            <div className={`${styles.card} ${styles.border_radius_1}`}>
-                <div className={styles.circle}>
-                    <Image
-                        src="/icon-star.svg"
-                        alt="Vercel Logo"
-                        width={50}
-                        height={50}
-                        // priority
-                    />
-                </div>
-                <h2>How did we do?</h2>
-                <p>
-                    Please let us know how we did with your support request. All feedback is
-                    appreciated to help us improve our offering!
-                </p>
-
-                <div className={styles.flex}>
-                    <button className={styles.circle}>
-                        <span>1</span>
-                    </button>
-                    <button className={styles.circle}>
-                        <span>2</span>
-                    </button>
-                    <button className={styles.circle}>
-                        <span>3</span>
-                    </button>
-                    <button className={styles.circle}>
-                        <span>4</span>
-                    </button>
-                    <button className={styles.circle}>
-                        <span>5</span>
-                    </button>
-                </div>
-            </div>
+  return (
+    <div className={s.page}>
+      <div
+        className={`
+        ${s.card}
+        ${s.border_radius_1}
+        ${s.padding_1_5}
+        ${s.flow}
+        `}
+      >
+        <div className={s.circle}>
+          <Image src="/icon-star.svg" alt="" width={15} height={15} />
         </div>
-    );
+        <h2>How did we do?</h2>
+        <p>
+          Please let us know how we did with your support request. All
+          feedback is appreciated to help us improve our offering!
+        </p>
+
+        <div className={s.flex_space_between}>
+          <div className={s.circle}>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label htmlFor="star1">
+              <span>1</span>
+            </label>
+          </div>
+          <div className={s.circle}>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label htmlFor="star2">
+              <span>2</span>
+            </label>
+            </div>
+          
+        </div>
+        <button
+          className={`${s.submit} ${s.border_radius_2} ${s.padding_0_75}`}
+        >
+          <span>Submit</span>
+        </button>
+      </div>
+    </div>
+  );
 }
 
 // 1 2 3 4 5
@@ -58,3 +60,5 @@ export default function Home() {
 
 // We appreciate you taking the time to give a rating. If you ever need more support,
 // don’t hesitate to get in touch!
+
+// To ask:

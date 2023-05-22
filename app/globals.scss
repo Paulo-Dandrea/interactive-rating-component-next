@@ -1,6 +1,6 @@
 /**============================================
  *! RESET from: https://andy-bell.co.uk/a-modern-css-reset/
- *=============================================**/ 
+ *=============================================**/
 
 /* Box sizing rules */
 *,
@@ -24,8 +24,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -39,6 +39,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+h1,h2,h3 {
+  line-height: 1
 }
 
 /* A elements that don't have a class get default styles */
@@ -62,17 +66,18 @@ select {
 }
 
 button {
+  background-color: transparent;
   border: none;
-  outline: none;
   cursor: pointer;
+  outline: none;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
