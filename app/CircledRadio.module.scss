@@ -1,0 +1,17 @@
+@import 'variables';
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background-color: $clr-dark-blue;
+  border-radius: 50%;
+
+  input {
+    display: none;
+  }
+}

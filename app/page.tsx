@@ -1,15 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import s from "./page.module.scss";
+import { useState } from "react";
+import CircledRadio from "./CircledRadio";
 
 export default function Home() {
+  const [rating, setRating] = useState(""); // State to hold the selected rating
+  console.log("rating: ", rating);
+
+  const handleRatingChange = (event) => {
+    setRating(event.target.value);
+  };
+
   return (
-    <div className={s.page}>
+    <div className={`${s.page} grid_center`}>
       <div
         className={`
         ${s.card}
-        ${s.border_radius_1}
-        ${s.padding_1_5}
-        ${s.flow}
+        border_radius_1
+        padding_1_5
+        flow
         `}
       >
         <div className={s.circle}>
@@ -21,23 +32,21 @@ export default function Home() {
           feedback is appreciated to help us improve our offering!
         </p>
 
-        <div className={s.flex_space_between}>
-          <div className={s.circle}>
-            <input type="radio" id="star1" name="rating" value="1" />
-            <label htmlFor="star1">
-              <span>1</span>
-            </label>
-          </div>
-          <div className={s.circle}>
-            <input type="radio" id="star2" name="rating" value="2" />
-            <label htmlFor="star2">
-              <span>2</span>
-            </label>
-            </div>
-          
+        <div className='flex_space_between'>
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <CircledRadio
+                key={i}
+                id={`star-${i + 1}`}
+                name="rating"
+                value={`${i + 1}`}
+                onChange={handleRatingChange}
+              />
+            ))}
         </div>
         <button
-          className={`${s.submit} ${s.border_radius_2} ${s.padding_0_75}`}
+          className={`${s.submit} border_radius_2 padding_0_75`}
         >
           <span>Submit</span>
         </button>
