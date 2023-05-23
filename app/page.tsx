@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import s from "./page.module.scss";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import CircledRadio from "./CircledRadio";
 
 type RatingCardProps = {
@@ -10,15 +10,16 @@ type RatingCardProps = {
 };
 
 function RatingCard({ handleSubmit }: RatingCardProps) {
-  const [rating, setRating] = useState(null);
-  
+  const [rating, setRating] = useState<number | null>(null);
+
   useEffect(() => {
     console.log("rating: ", rating);
-  }, [rating])
-    
+  }, [rating]);
 
-  const handleRatingChange = (event) => {
-    setRating(event.target.value);
+  const handleRatingChange = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
+      setRating(Number(event.target.value));
   };
 
   return (
@@ -40,17 +41,13 @@ function RatingCard({ handleSubmit }: RatingCardProps) {
               key={i}
               id={`star-${i + 1}`}
               name="rating"
-              value={`${i + 1}`}
+              value={i + 1}
               onChange={handleRatingChange}
-
-              rating={rating}
-
-              checked={rating === `${i + 1}`}
+              checked={rating === i + 1}
             />
           ))}
       </div>
       <button
-
         className={`${s.submit} border_radius_2 padding_0_75`}
         onClick={() => handleSubmit(rating)}
         disabled={!rating}
@@ -62,21 +59,18 @@ function RatingCard({ handleSubmit }: RatingCardProps) {
 }
 
 export default function Home() {
-  const [submitedRating, setSubmitedRating] = useState<null | string>(
+  const [submitedRating, setSubmitedRating] = useState<null | number>(
     null
   );
 
-  console.log("submitedRating: ", submitedRating);
-
-  const handleSubmit = (rating: any) => {
-
+  const handleSubmit = (rating: number) => {
     setSubmitedRating(rating);
     console.log(rating);
   };
 
   useEffect(() => {
     setSubmitedRating(null);
-  }, [])
+  }, []);
 
   return (
     <div className={`${s.page} grid_center`}>
