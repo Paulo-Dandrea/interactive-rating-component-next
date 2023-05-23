@@ -1,17 +1,34 @@
-@import 'variables';
+@import "variables";
+@import "page.module.scss";
 
-.circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.circled_radio {
+  @extend .circle;
 
-  width: 42px;
-  height: 42px;
+  cursor: pointer;
 
-  background-color: $clr-dark-blue;
-  border-radius: 50%;
+  label {
+    cursor: pointer;
+
+    &:active
+    {
+      background-color: $clr-light-grey;
+    }
+  }
 
   input {
     display: none;
+
+    &:active + label,
+    &:focus + label {
+      background-color: $clr-light-grey;
+    }
+  }
+
+  &:hover {
+    background-color: $clr-primary;
+
+    span {
+      color: $clr-white;
+    }
   }
 }

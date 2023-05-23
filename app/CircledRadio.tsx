@@ -14,20 +14,29 @@ export default function CircledRadio({
   name,
   checked,
   onChange,
+
+  rating
 }: CircledRadioProps) {
+  // console.log("checked: ", checked);
+  // console.log("value: ", value);
+
+  console.log("rating: ", rating);
+  console.log("value: ", value)
+  console.log("rating === value: ", rating === value);
+  
+
   return (
-    <div className={s.circle}>
+    <label htmlFor={id} className={s.circled_radio}>
       <input
         type="radio"
         id={id}
         name={name}
         value={value}
-        checked={checked}
+        // checked={checked}
+        checked={rating === value}
         onChange={onChange}
       />
-      <label htmlFor={id}>
-        <span>{value}</span>
-      </label>
-    </div>
+      <span>{value}</span>
+    </label>
   );
 }

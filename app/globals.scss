@@ -92,6 +92,11 @@ button {
 
 /*=============== END OF RESET SECTION ==============*/
 
+* > * {
+  transition: all 0.3s ease-in-out;
+}
+
+
 .grid_center {
   display: grid;
   place-items: center;
