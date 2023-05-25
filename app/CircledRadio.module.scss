@@ -9,17 +9,16 @@
   label {
     cursor: pointer;
 
-    &:active
-    {
+    &:active {
       background-color: $clr-light-grey;
     }
   }
 
   input {
     display: none;
-
-    &:active + label,
-    &:focus + label {
+    // This should be working if I put 'checked' susscessfully to the input
+    &:active,
+    &:focus {
       background-color: $clr-light-grey;
     }
   }
