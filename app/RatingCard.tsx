@@ -3,22 +3,23 @@ import CircledRadio from "./CircledRadio";
 import s from "./page.module.scss";
 import Image from "next/image";
 
-
 type RatingCardProps = {
-  handleSubmit: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (rating: number) => void;
 };
 
-export default function RatingCard({ handleSubmit }: RatingCardProps) {
+export default function RatingCard({
+  handleSubmit,
+}: RatingCardProps) {
   const [rating, setRating] = useState<number | null>(null);
-
-  useEffect(() => {
-    console.log("rating: ", rating);
-  }, [rating]);
 
   const handleRatingChange = (
     event: ChangeEvent<HTMLInputElement>
   ) => {
     setRating(Number(event.target.value));
+  };
+
+  const handleButtonClick = () => {
+    rating !== null ? handleSubmit(rating) : null;
   };
 
   return (
@@ -48,7 +49,7 @@ export default function RatingCard({ handleSubmit }: RatingCardProps) {
       </div>
       <button
         className={`${s.submit} border_radius_2 padding_0_75`}
-        onClick={() => handleSubmit(rating)}
+        onClick={() => handleButtonClick()}
         disabled={!rating}
       >
         <span>Submit</span>

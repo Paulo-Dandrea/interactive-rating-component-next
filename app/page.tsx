@@ -14,7 +14,6 @@ export default function Home() {
     setSubmitedRating(rating);
   };
 
-
   return (
     <div className={`${s.page} grid_center`}>
       <div
