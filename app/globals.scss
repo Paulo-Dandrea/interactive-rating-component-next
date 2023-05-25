@@ -91,14 +91,16 @@ button {
 }
 
 /*=============== END OF RESET SECTION ==============*/
+
+/**============================================
+ *! GLOBALS
+ *=============================================**/
+
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
-
-
 
 * > * {
   transition: all 0.3s ease-in-out;
 }
-
 
 .grid_center {
   display: grid;
@@ -127,12 +129,8 @@ button {
 }
 
 .padding_top_bottom_1 {
-  padding-top: 0.5rem ;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.padding_0_5 {
-  padding: 0.5rem;
 }
 
 .padding_0_75 {
@@ -146,5 +144,3 @@ button {
 .txt_align_center {
   text-align: center;
 }
-
-

@@ -14,9 +14,6 @@ export default function Home() {
     setSubmitedRating(rating);
   };
 
-  // useEffect(() => {
-  //   setSubmitedRating(null);
-  // }, []);
 
   return (
     <div className={`${s.page} grid_center`}>
