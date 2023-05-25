@@ -1,0 +1,9 @@
+@import "variables";
+
+.grey_pill {
+    background-color: $clr-dark-blue;
+    
+    p {
+        color: $clr-primary;
+    }
+}
