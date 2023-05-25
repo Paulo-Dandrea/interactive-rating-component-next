@@ -1,7 +1,7 @@
 "use client";
 
 import s from "./page.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RatingCard from "./RatingCard";
 import ThankYouCard from "./ThankYouCard";
 

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import s from "./ThankYouCard.module.scss";
 
-export default function ThankYouCard({ submitedRating }) {
+type ThankYouCardProps = {
+    submitedRating: number;
+};
+
+export default function ThankYouCard({ submitedRating }: ThankYouCardProps) {
   return (
     <div className="flow grid_center txt_align_center">
       <Image
